@@ -1,6 +1,7 @@
 'use strict'
 
 let http = require('http');
+let https = require('https');
 let request = require('request');
 let yargs = require('yargs');
 let path = require('path');
@@ -13,7 +14,7 @@ let argv = yargs
     .alias('p', 'port')
     .describe('p', 'Specify a forward port')
     .alias('x', 'host')
-    .describe('x', 'Specify a forward phostort')
+    .describe('x', 'Specify a forward host')
     .alias('e', 'exec')
     .describe('e', 'Specify a process to proxy instead')
     .alias('l', 'log')
@@ -50,7 +51,6 @@ if(argv.exec){
         console.log(`Child exited with code ${code}`);
     });
 }else{
-    // console.log("Not " + argv.exec);
     //Echo Server
     http.createServer((req, res) => {
         req.pipe(res);
@@ -60,7 +60,7 @@ if(argv.exec){
         logStream.write('\nRequest headers at echo Server:\n' + JSON.stringify(req.headers));
         logStream.write('\n');
         req.pipe(logStream, {end: false})
-    }).listen(8000);
+    }).listen(port);
 
     //Proxy Server
     http.createServer((req, res) => {

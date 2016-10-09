@@ -1,0 +1,16 @@
+{
+  "name": "proxy_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ltkien",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.75.0",
+    "yargs": "^3.32.0"
+  }
+}
