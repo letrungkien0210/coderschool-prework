@@ -4,11 +4,10 @@
         "name": "Launch",
         "type": "node",
         "request": "launch",
-        "program": "${workspaceRoot}/filteredLS.js",
+        "program": "${workspaceRoot}/httpClient.js",
         "stopOnEntry": false,
         "args": [
-            "F:\\Download",
-            "md"
+            "http://gooogle.com"
         ],
         "cwd": "${workspaceRoot}",
         "preLaunchTask": null,
